@@ -1,0 +1,33 @@
+{
+  "name": "cache-clock",
+  "version": "0.1.0",
+  "description": "Shows how long the prompt cache stays warm as a countdown above the prompt, with an optional keep-warm mode.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "ttl": {
+      "type": "string",
+      "title": "Cache lifetime",
+      "description": "auto picks 1 hour for subscriptions and 5 minutes for API keys. Set 5m or 1h to override.",
+      "options": ["auto", "5m", "1h"],
+      "default": "auto"
+    },
+    "keepWarm": {
+      "type": "boolean",
+      "title": "Keep warm at start",
+      "description": "Start each session with keep-warm on. It sends a tiny request before the cache expires, which costs a cache read of your whole context each time.",
+      "default": false
+    },
+    "marginSeconds": {
+      "type": "number",
+      "title": "Keep-warm margin (seconds)",
+      "description": "Send the keep-warm request this many seconds before the cache expires.",
+      "default": 60
+    },
+    "maxPings": {
+      "type": "number",
+      "title": "Max keep-warm requests",
+      "description": "Stop keeping warm after this many requests in a row with no activity from you.",
+      "default": 6
+    }
+  }
+}
