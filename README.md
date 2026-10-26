@@ -76,5 +76,5 @@ Then start a new session.
 
 ## Development
 
-Run `claude plugin test cache-clock` to run the tests.
-Run `claude plugin validate cache-clock` to validate the manifest.
+Run `claude plugin test ./cache-clock` to run the tests.
+Run `claude plugin validate ./cache-clock` to validate the manifest.
